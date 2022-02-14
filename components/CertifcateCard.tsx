@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "../styles/Home.module.css";
 /**
  * @prop  certificateOrgUrl = certificate org url
+ * @prop  certificateOrg = certificate org name
  * @prop  certificateUrl = certificate url
  * @prop  description = certificate description
  * @prop  title = certificate title
@@ -33,7 +34,7 @@ export function CertificateCard(props) {
             style={{
               margin: isBigScreen ? "35px 0px 35px 0px" : 0,
               border: "1px solid black",
-              width: "90%",
+              width: "98%",
             }}
           />
         </header>
@@ -94,13 +95,19 @@ export function CertificateCard(props) {
           </div>
           <p
             style={{
+              overflowWrap: "break-word",
               fontSize: isBigScreen ? "2em" : "1em",
               textDecoration: "underline",
               color: "blue",
             }}
           >
-            <a href={props.certificateOrgUrl} target="_blank" rel="noreferrer">
-              {props.certificateOrgUrl || "https://google.com"}
+            <a
+              style={{ overflowWrap: "brea-word" }}
+              href={props.certificateOrgUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {props.certificateOrg || "google"}
             </a>
           </p>
         </footer>

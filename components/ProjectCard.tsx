@@ -43,6 +43,7 @@ export function ProjectCard(props) {
           style={{
             width: "100%",
             display: "flex",
+            flexDirection: isBigScreen ? "row" : "column",
             padding: "2% 0%",
             alignItems: "center",
           }}
@@ -55,7 +56,7 @@ export function ProjectCard(props) {
               fontSize: isBigScreen ? "6em" : "4em",
               width: 50,
               height: 50,
-              marginRight: "7%",
+              margin: isBigScreen ? " 0% 7% 0% 0%" : "5% 0% ",
               padding: isBigScreen ? "0px 60px" : 0,
             }}
           >
@@ -103,7 +104,7 @@ export function ProjectCard(props) {
               color: "blue",
             }}
           >
-            <a href="https://google.com" target="_blank" rel="noreferrer">
+            <a href={props.projectUrl} target="_blank" rel="noreferrer">
               {props.projectUrl || "https://google.com"}
             </a>
           </p>
