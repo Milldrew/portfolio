@@ -1,42 +1,37 @@
+import { PageHeader } from "../components/PageHeader";
+import { CertificateCard } from "../components/CertifcateCard";
 import { ProjectCard } from "../components/ProjectCard";
 export default function AboutAndrew(props) {
   const listStyle = { fontSize: 20, marginLeft: 30 };
   return (
     <>
+      <header style={{ display: "flex", justifyContent: "Center" }}>
+        <PageHeader headerText="Certificates and Such" />
+      </header>
       <main
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-          width: "100vw",
+          justifyContent: "flex-start",
         }}
       >
-        <h1
-          style={{
-            paddingLeft: 40,
-            paddingRight: 40,
-          }}
-        >{` Expensive Pieces of Paper
-        `}</h1>
-        <ProjectCard
-          emoji="🚀"
-          projectTitle="Take Off"
-          description="This is a mock project"
+        <CertificateCard
+          title="Bachelors of Science Chemistry Biochemistry"
+          certificateUrl="bs-chem.jpg"
+          certificateOrgUrl="https://www.uaf.edu/chem"
         />
-        <ProjectCard />
-        <article
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            justifyItems: "stretch",
-            alignItems: "center",
-            height: "100%",
-            width: "100%",
-          }}
-        ></article>
+        <CertificateCard
+          title="OpenJS Service Developer Certification"
+          certificateUrl="jsnad.jpg"
+          certificateOrgUrl="https://www.uaf.edu/chem"
+        />
+
+        <CertificateCard
+          title="OpenJS Service Developer Certification"
+          certificateUrl="jsnsd.jpg"
+          certificateOrgUrl="https://www.uaf.edu/chem"
+        />
       </main>
     </>
   );

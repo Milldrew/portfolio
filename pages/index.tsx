@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import { MenuItem } from "../utils/menuItems";
 import { FabDrawer } from "mdrl";
 import { Hero } from "../components/Hero";
@@ -8,6 +9,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
   return (
     <div className={styles.container}>
       <Head>
@@ -20,18 +22,20 @@ const Home: NextPage = () => {
         <Hero />
         <p
           style={{
-            marginTop: -20,
-            fontSize: 14,
+            marginTop: isBigScreen ? -120 : -120,
+            fontSize: isBigScreen ? 24 : 14,
+            fontWeight: isBigScreen ? 400 : 600,
             textAlign: "left",
             width: "100%",
-            padding: "20%",
+            padding: isBigScreen ? "12%" : "20%",
             lineHeight: 3,
             letterSpacing: 5,
           }}
         >
-          Hello dear vistor, Thanks for being here. Please use the hamburger
-          menu in the lower right to open the navigation drawer and browse my
-          portfolio. Thanks!
+          Hello dear vistor, Thanks for being here.
+          <br />
+          {!isBigScreen && <br />}
+          Please use the hamburger menu to navigate. Thanks!
           <br />
           -Andrew
         </p>

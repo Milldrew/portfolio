@@ -1,12 +1,12 @@
 import { useMediaQuery } from "react-responsive";
 import styles from "../styles/Home.module.css";
 /**
- * @prop emoji = project emoji
- * @prop  description = project description
- * @prop  projectTitle = project title
- * @prop  projectUrl = project url
+ * @prop  certificateOrgUrl = certificate org url
+ * @prop  certificateUrl = certificate url
+ * @prop  description = certificate description
+ * @prop  title = certificate title
  */
-export function ProjectCard(props) {
+export function CertificateCard(props) {
   const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
   return (
     <>
@@ -27,40 +27,36 @@ export function ProjectCard(props) {
           borderTopRightRadius: 30,
         }}
       >
-        <header>
-          <h3
+        <header style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            src={props.certificateUrl}
             style={{
-              fontSize: isBigScreen ? "2.0em" : "1.2em",
-              textAlign: "center",
-              fontWeight: 400,
-              letterSpacing: 3,
+              margin: isBigScreen ? "35px 0px 35px 0px" : 0,
+              border: "1px solid black",
+              width: "90%",
             }}
-          >
-            {props.projectTitle || `Project Title`}
-          </h3>
+          />
         </header>
         <main
           style={{
             width: "100%",
             display: "flex",
-            padding: "2% 0%",
+            padding: "0% 0%",
+            justifyContent: "flex-start",
             alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          <div
+          <h3
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: isBigScreen ? "6em" : "4em",
-              width: 50,
-              height: 50,
-              marginRight: "7%",
-              padding: isBigScreen ? "0px 60px" : 0,
+              fontSize: isBigScreen ? "36px" : "14px",
+              textAlign: "center",
+              letterSpacing: ".1em",
+              margin: "5% 0% 6% 0%",
             }}
           >
-            {props.emoji || "🌲"}
-          </div>
+            {props.title}
+          </h3>
           <div
             style={{
               overflow: "scroll",
@@ -103,8 +99,8 @@ export function ProjectCard(props) {
               color: "blue",
             }}
           >
-            <a href="https://google.com" target="_blank" rel="noreferrer">
-              {props.projectUrl || "https://google.com"}
+            <a href={props.certificateOrgUrl} target="_blank" rel="noreferrer">
+              {props.certificateOrgUrl || "https://google.com"}
             </a>
           </p>
         </footer>

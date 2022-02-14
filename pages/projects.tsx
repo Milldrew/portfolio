@@ -1,41 +1,41 @@
+import { PageHeader } from "../components/PageHeader";
 import { useMediaQuery } from "react-responsive";
 import { ProjectCard } from "../components/ProjectCard";
 export default function AboutAndrew(props) {
-  const isBigScreen = useMediaQuery({ query: "(min-width: 24px)" });
   const listStyle = { fontSize: 20, marginLeft: 30 };
+  const isBigScreen = useMediaQuery({ query: "(min-width: 700px)" });
   return (
     <>
       <main
         style={{
+          marginTop: "5%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-          width: "100vw",
+          justifyContent: "flex-start",
         }}
       >
-        <h1 style={{ paddingTop: 30 }}>{`
-          Andrew's Projects
-        `}</h1>
-        {isBigScreen && <h1>big screen</h1>}
+        <PageHeader headerText="Andrew's projects" />
         <ProjectCard
-          emoji="🚀"
-          projectTitle="Take Off"
+          emoji="💼"
+          projectTitle="Portfolio Site"
+          description="This website was built using React.js and Next.js"
+        />
+        <ProjectCard
+          emoji="📚"
+          projectTitle="Milldrew's React Library"
           description="This is a mock project"
         />
-        <ProjectCard />
-        <article
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            justifyItems: "stretch",
-            alignItems: "center",
-            height: "100%",
-            width: "100%",
-          }}
-        ></article>
+        <ProjectCard
+          emoji="🗳"
+          projectTitle="Idaho Election Book"
+          description="This is a mock project"
+        />
+        <ProjectCard
+          emoji="✅"
+          projectTitle="Federated Todo List"
+          description="This is a mock project"
+        />
       </main>
     </>
   );
