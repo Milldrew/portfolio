@@ -14,11 +14,15 @@ export default function Layout() {
         margin: 30,
       }}
       menuItems={[
-        <MenuItem href="/" text="Home" />,
-        <MenuItem href="/about-drew" text="About Drew" />,
-        <MenuItem href="/projects" text="Projects" />,
-        <MenuItem href="/pieces-of-paper" text="Certificates and Such" />,
-        <MenuItem href="/contact" text="Contact Me" />,
+        <MenuItem key={1} href="/" text="Home" />,
+        <MenuItem key={2} href="/about-drew" text="About Drew" />,
+        <MenuItem key={3} href="/projects" text="Projects" />,
+        <MenuItem
+          key={4}
+          href="/pieces-of-paper"
+          text="Certificates and Such"
+        />,
+        <MenuItem key={5} href="/contact" text="Contact Me" />,
       ]}
       drawerStyles={{
         paddingTop: "10%",
