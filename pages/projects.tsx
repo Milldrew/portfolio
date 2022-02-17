@@ -21,7 +21,13 @@ export default function AboutAndrew(props) {
           justifyContent: "flex-start",
         }}
       >
-        <PageHeader headerText="Andrew's projects" />
+        <PageHeader headerText="NestJS CRUD App" />
+        <ProjectCard
+          emoji="🐈"
+          projectTitle="NestJS Crud App"
+          description="This is a nestjs crud app, the basic functionality was built in a couple days, and I will continue to build it out as I wish. There is a react front end being built with next.js in the repo."
+          projectUrl="https://github.com/Milldrew/nestjs"
+        />
         <ProjectCard
           emoji="💼"
           projectTitle="Portfolio Site"

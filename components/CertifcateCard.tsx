@@ -101,12 +101,7 @@ export function CertificateCard(props) {
               color: "blue",
             }}
           >
-            <a
-              style={{ overflowWrap: "brea-word" }}
-              href={props.certificateOrgUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={props.certificateOrgUrl} target="_blank" rel="noreferrer">
               {props.certificateOrg || "google"}
             </a>
           </p>

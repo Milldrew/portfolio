@@ -105,7 +105,7 @@ export function ProjectCard(props) {
             }}
           >
             <a href={props.projectUrl} target="_blank" rel="noreferrer">
-              {props.projectUrl || "https://google.com"}
+              {`${props.projectTitle} link` || "https://google.com"}
             </a>
           </p>
         </footer>
